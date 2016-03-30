@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename= 'css/bootstrap.min.css')}}">
+	<style type="text/css">
+			header{
+		background-color: #006699;
+		height: 65px;
+	}
+	.name, .home, .logout{
+		display: inline-block;
+		color: white;
+	}
+	.name{
+		margin-left: 60px;
+	}
+	.home{
+		margin-left: 650px;
+
+	}
+	.display{
+		margin-left: 10px;
+	}
+	.logout{
+		margin-left: 20px;
+	}
+	footer{
+		background-color: #006699;
+		height: 65px;
+		margin-top: 15px;
+	}
+	button{
+		margin-top: 10px;
+		margin-left: 
+	}
+	.display, .pic{
+		display: inline-block;
+		vertical-align: top;
+		margin-top: 
+	}
+
+
+	</style>
+	
+</head>
+<body>
+	<div class='container'>
+		<header>
+			<h2 class='name'>UNISHIELD INS</h2>
+			<a class='home' href ='/users/home'>Home</a>
+			<a class='logout' href ='/'>Logout</a>
+			<a class='logout' href ='#'>Username</a>
+		</header>
+		<div class='display'>
+			<h2>Need to make a claim for Item Name?</h2><hr>
+			<h4>Describe the following involving your case if applicable:</h4>
+			<ul>
+				<li>Date of incident</li>
+				<li>Vandalized</li>
+				<li>Lost/Stolen</li>
+				<li>Damaged from a non-accident-related event</li>
+				<li>Damaged from fire or severe weather</li>
+			</ul>
+			<form action='' name=''>
+				<textarea name ='' rows='3' cols='60'>
+				</textarea><br>
+				<button class="btn btn-primary type" type='submit'>SUBMIT</button>
+			</form>
+		</div>	
+		<div class='pic'>
+			<img type="text/javascript" height="350" width="500" src='{{ url_for('static', filename='img/money.jpg') }} '>
+		</div>	
+
+
+		<footer>
+			
+		</footer>
+	</div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename= 'css/bootstrap.min.css')}}">
+	<style type="text/css">
+			header{
+		background-color: #006699;
+		height: 65px;
+	}
+	.name, .home, .logout{
+		display: inline-block;
+		color: white;
+	}
+	.name{
+		margin-left: 60px;
+	}
+	.home{
+		margin-left: 650px;
+
+	}
+	.logout{
+		margin-left: 20px;
+	}
+	footer{
+		background-color: #006699;
+		height: 65px;
+		margin-top: 15px;
+	}
+	.search{
+		margin-top: 20px;
+	}
+	button{
+		margin-left: 900px;
+		margin-top: 15px;
+	}
+	.form-control{
+		margin-top: 15px;
+	}
+	</style>
+	
+</head>
+<body>
+	<div class='container'>
+		<header>
+			<h2 class='name'>UNI SHIELD INS</h2>
+			<a class='home' href ='/users/home'>Home</a>
+			<a class='logout' href ='/'>Logout</a>
+			<a class='logout' href ='#'>Username</a>
+		</header>
+		<div class='search'>
+			<form type='/assets/add_item'>
+				<h2>Step 1 of 2: Search for your item and select quantity</h2>
+					<input type="text" class="form-control" placeholder="Search">	
+					<button class="btn btn-primary" type='submit'>SEARCH</button>
+					<input type="text" class="form-control" placeholder="Quantity">
+					<button class="btn btn-primary" type='submit'>SELECT</button>
+					<a href='/assets/add_item'>Add</a>
+			</form>
+		</div>
+		<img type="text/javascript" src='{{ url_for('static', filename='img/logo.jpg') }}'>
+		<footer>
+			
+		</footer>
+	</div>
+</body>
+</html>
