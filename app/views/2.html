@@ -1,19 +1,89 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+        <meta charset = "utf-8"/>
+        <title>Welcome</title>
+        <meta name = "description" content="DESCRITPTIONHERE"/>
+        
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+		<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+	
+	<link rel = "stylesheet" href="{{ url_for('static', filename= 'css/style2.css')}}">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename= 'css/bootstrap.min.css')}}"> 
 </head>
 <body>
-	<h2>MAIN PAGE</h2>
-	<ul>
-		<li>item name</li>
-		<li><a href='/assets/description'>desc</a></li>
-		<li><a href='#'>remove</a></li>
-	<h2>Add new item:</h2>
-		<a href='/assets/add'>Add</a>
-	<h2>Make a claim:</h2>
-	<a href='/claims/claim'>claim</a>
+        <div id = "wrapper">
+            <div id = "header">
+	            <h1>Welcome {{session['first_name']}}!</h1>
+	            <p class = "logout"><a href = "">Logout</a></p>
+            </div>    
+
+            <div id = "pokemon">
+            	<p>Here goes your total no of assets</p>
+             	<input type="hidden" id="quant" value="{{numb}}">
+				{% for j in range(0,numb)%}
+					{% if items %}
+						<input type="hidden" id="{{j}}" value="{{items[j].asset_id}}">
+					{%endif%}
+				{%endfor%}     
+            </div>
+            <div id = "stats">
+                <div class = "name"></div>
+                <div class = "pic"></div>
+                <div class = "description"></div>
+                <form>
+        			<button type ="Submit" class ="button button-block"/>Delete</button>
+        		</form>
+            </div>
+            
+            <div id = "footer">
+				<a href='/assets/add_view' class = "button button-block1"/>Add Asset</a>
+        		<a href='/claims/claim' class = "button button-block1"/>Claims</a>
+        	</div>
+        </div>
 </body>
+
+<script type="text/javascript">
+            $(document).ready(function(){
+                console.log('j');
+                var number = $('#quant').val();
+                console.log(number);
+                for(var i = 0; i < number; i++) {
+                    var any = '#'+ i;
+                    var input = $(any).val();
+                    console.log(input);
+                    $.get("https://api.bestbuy.com/v1/products/" + input +".json?apiKey=b293tv8nsk2hf49hegrf4aj7", function(res){
+                        // console.log(res);
+                        var img='';
+                        img += "<img id =\"" + res.sku + "\"src = \""+res.image+"\"><br>";
+                        $(img).appendTo("#pokemon");
+                    }, "json");
+                };
+            	console.log("try")
+	            $('#pokemon').on('click', 'img',function() {
+	                console.log('jjjj');
+	                var id = $(this).attr("id");
+	                console.log(id);
+	                $.get("https://api.bestbuy.com/v1/products/"+ id +".json?apiKey=b293tv8nsk2hf49hegrf4aj7", function(res) {
+	                	console.log(res);
+	                    var name = "";
+	                    name += "<h1>"+res.name+"</h1>";
+	                    $(".name").html(name);
+	                    var img = "";
+	                    img += "<img id=\""+id+"\" src=\""+res.image+"\">";
+	                    console.log(img);
+	                    $(".pic").html(img);
+	                    var description = "";
+	                    description += "<h4>"+res.longDescription+"</h4>";
+	                    $(".description").html(description);
+	                }, "json");   
+	            }); 
+            });
+        </script>
+
 </html>
 
 
+
+	

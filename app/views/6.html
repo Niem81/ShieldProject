@@ -1,81 +1,173 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename= 'css/bootstrap.min.css')}}">
-	<style type="text/css">
-			header{
-		background-color: #006699;
-		height: 65px;
-	}
-	.name, .home, .logout{
-		display: inline-block;
-		color: white;
-	}
-	.name{
-		margin-left: 60px;
-	}
-	.home{
-		margin-left: 650px;
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename= 'css/bootstrap.min.css')}}">
+        <script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <body background = "http://i.istockimg.com/file_thumbview_approve/52313702/6/stock-illustration-52313702-seamless-pattern-of-electronic-devices-and-home-appliances-icons-set-.jpg">
+    <style type="text/css">
 
-	}
-	.display{
-		margin-left: 10px;
-	}
-	.logout{
-		margin-left: 20px;
-	}
-	footer{
-		background-color: #006699;
-		height: 65px;
-		margin-top: 15px;
-	}
-	button{
-		margin-top: 10px;
-		margin-left: 
-	}
-	.display, .pic{
-		display: inline-block;
-		vertical-align: top;
-		margin-top: 
-	}
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  font-family:sans-serif;
+}
+    .container{
+              width: 960px;
+    } 
+    .wrapper{
+        margin-top: 40px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 20px;
+        background: rgba(19, 35, 47, 0.9);
+        padding: 40px;
+        max-width: 900px;
+        margin: 40px auto;
+        border-radius: 4px;
+        box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+    }
+    header{
+          border-bottom: 1px solid white;
+
+    }
+    .name, .tab{
+    display: inline-block;
+    margin-left: 10px;
+  }
+  .tab{
+    margin-left: 640px;
+  }
 
 
-	</style>
-	
+    #button{
+          position:relative;
+          padding:6px 15px;
+          margin-left: 5px;
+          margin-top: 5px;
+          border:1px solid black;
+          background-color:white;
+          border-radius: 8px;
+          color: #179b77;
+          width: 80px; 
+          height: 40px; 
+          padding: 5px; 
+          font-weight: bold;   
+          margin-bottom: 20px; 
+          margin-left: 240px;
+
+    }
+    .display{
+        padding-bottom:10px;
+        margin-top: 10px;
+        border-radius: 8px;
+        margin-left: 10px;
+    }
+    .text{
+        border: 1px solid white;
+        padding-left:10px; 
+        padding-right:10px;
+        padding-bottom:10px;
+        margin-top: 10px;
+        border-radius: 8px;
+        margin-left: 5px;
+        width: 575px;
+        margin-left: 10px;
+
+    }
+    .display, .pic{
+        display: inline-block;
+        vertical-align: top;
+        margin-top: 
+    }
+    a{
+    color: #179b77;
+    margin-left: 10px;
+    }
+    h2{
+        color: white;
+    }
+    h4{
+        color: white;
+    }
+    h3{
+        color:white;
+    }
+    li{
+         color:white;
+    }
+    label{
+        color: white;
+        margin-left: 10px;
+    }
+    #box{
+        margin-right: 5px;
+
+    }
+    </style>
+    
 </head>
 <body>
 	<div class='container'>
-		<header>
-			<h2 class='name'>UNISHIELD INS</h2>
-			<a class='home' href ='/users/home'>Home</a>
-			<a class='logout' href ='/'>Logout</a>
-			<a class='logout' href ='#'>Username</a>
-		</header>
-		<div class='display'>
-			<h2>Need to make a claim for Item Name?</h2><hr>
-			<h4>Describe the following involving your case if applicable:</h4>
-			<ul>
-				<li>Date of incident</li>
-				<li>Vandalized</li>
-				<li>Lost/Stolen</li>
-				<li>Damaged from a non-accident-related event</li>
-				<li>Damaged from fire or severe weather</li>
-			</ul>
-			<form action='' name=''>
-				<textarea name ='' rows='3' cols='60'>
-				</textarea><br>
-				<button class="btn btn-primary type" type='submit'>SUBMIT</button>
-			</form>
-		</div>	
-		<div class='pic'>
-			<img type="text/javascript" height="350" width="500" src='{{ url_for('static', filename='img/money.jpg') }} '>
-		</div>	
+        <div class='wrapper'>
+        <header>
+          <div class='name'>
+            <h2 class='name'>UNIVERSAL INSURANCE</h2>
+          </div>
+          <div class='tab'>
+   
+                <a class='home' href ='/users/home'>Home</a>
+                <a class='logout' href ='/'>Logout</a>
+                <a class='logout' href ='#'>{{session.first_name}}</a>
 
-
-		<footer>
-			
-		</footer>
-	</div>
+          </div>
+            
+        </header>
+        <div class='display'>
+            <h2>Need to make a claim?</h2>
+            <h4>Describe the following involving your case if applicable:</h4>
+            <ul>
+                <li>Date of incident</li>
+                <li>Vandalized</li>
+                <li>Lost/Stolen</li>
+                <li>Damaged from a non-accident-related event</li>
+                <li>Damaged from fire or severe weather</li>
+            </ul>
+        </div>
+		<div class='text'>
+            <form action='/claims/add_claim' method="post" id='add_claim'>
+                <h3>Select the items you want to consider in your Claim!</h3>
+                {% for item in items%}
+                    <label id='box' for="items"><input type="checkbox" id='item' name="items" value="{{item.id}}">{{item.asset_name}}</label><br>
+                {%endfor%}
+                <br>
+                <textarea name ='claim' rows='3' cols='76'></textarea><br>
+                <button id='button' type='submit'>SUBMIT</button>
+            </form>
+        </div>    
+<!--         <div class='pic'>
+            <img type="text/javascript" height="350" width="500" src='{{ url_for('static', filename='img/money.jpg') }} '>
+        </div>   -->  
+        <footer>
+            
+        </footer>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function (){
+            console.log("Time to insert claim and response and assets relationship");
+            $('#add_claim').submit(function(){
+                    console.log("past post");
+            });
+            
+        });
+    </script>
 </body>
 </html>

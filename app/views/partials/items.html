@@ -1,0 +1,21 @@
+
+        	<table class="table table-bordered table-striped">
+        		<thead>
+				  	<tr>
+				    	<th>Name</th>
+				     	<th>Description</th>
+				     	<th>Price</th>
+				     	<th>Quantity</th>
+				  	</tr>
+				</thead>
+				<tbody>
+	        	{% for item in items %}
+	        		<tr>
+	     				<td>{{item['asset_name']}}</td>
+	     				<td>{{item['description']}}</td>
+	     				<td>{{item['value']}}</td>
+	     				<td>{{item.quantity}}</td>
+	  				</tr>
+			    {% endfor %}
+		    	</tbody>
+		    </table>

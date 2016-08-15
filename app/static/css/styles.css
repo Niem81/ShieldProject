@@ -1,3 +1,9 @@
 * {
   font-family: monaco;
 }
+
+body {
+	background: url(../img/shield_back.png) no-repeat top left;
+}
+
+
