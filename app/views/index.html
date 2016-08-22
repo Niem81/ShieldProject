@@ -13,52 +13,82 @@
 
   <body>
 
-    <div class="form">
-      
-      <ul class="tab-group">
-        <li class="tab active"><a href="#signup">Sign Up</a></li>
-        <li class="tab"><a href="#login">Log In</a></li>
-      </ul>
-      
+    <!-- Setting the nav bar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <header class="site-header">
+        <div class="top-header">
+          <div class="container">
+            <a href="index.html" id="branding">
+              <img src="img/logo.png" alt="Shield Insurance" class="logo">
+              <div class="logo-text">
+                <h1 class="site-title">Company Name</h1>
+                <small class="description">Taline goes here</small>
+              </div>
+            </a> <!-- #branding -->
+          
+            <div class="right-section pull-right">
+              <a href="#" class="phone"><img src="images/icon-phone.png" class="icon">+1 823 424 9134</a>
+          
+              <form action="#" class="search-form">
+                <input type="text" placeholder="Search...">
+                <button type="submit"><img src="images/icon-search.png" alt=""></button>
+              </form>
+            </div>
+          </div> <!-- .container -->
+        </div> <!-- .top-header -->
+
+        
+        <div class="bottom-header">
+          <div class="container">
+            <div class="main-navigation">
+              <button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
+              <ul class="menu">
+                <li class="menu-item"><a href="about.html">About us</a></li>
+                <li class="menu-item"><a href="insurance.html">Insurance plans</a></li>
+                <li class="menu-item"><a href="resource.html">Resources</a></li>
+                <li class="menu-item"><a href="contact.html">Contact</a></li>
+              </ul> <!-- .menu -->
+            </div> <!-- .main-navigation -->
+            
+            <div class="social-links">
+              <a href="#"><i class="fa fa-facebook"></i></a>
+              <a href="#"><i class="fa fa-twitter"></i></a>
+              <a href="#"><i class="fa fa-google-plus"></i></a>
+              <a href="#"><i class="fa fa-pinterest"></i></a>
+            </div>
+            
+            <div class="mobile-navigation"></div>
+          </div>
+        </div>
+        
+      </header> <!-- .site-header -->
+      <div class="container first">
+        <div class="collapse navbar-collapse navbar-header">  
+          <ul class="nav navbar-nav navbar-right">
+            <li><a class="navbar-brand" href="#signup">Sign Up</a></li>
+            <li><a class="navbar-brand" href="#login">Log In</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="ontop container">
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#HOME">Home</a></li>
+              <li><a href="#SERVICE">Services</a></li>
+              <li><a href="#ABOUT">About</a></li>
+              <li><a href="#TESTIMONIAL">Testimonial</a></li>
+              <li><a href="#WORK">Work</a></li>
+              <li><a href="#CONTACT">Contact</a></li>
+            </ul>
+          </div>
+      </div>
+    </nav>
+
       <div class="tab-content">
         <div id="signup">   
           <h1>Sign Up for Free</h1>
           
-          <form action="/users/register" method="post">
           
-          <div class="top-row">
-            <div class="field-wrap">
-              <label>
-                First Name<span class="req">*</span>
-              </label>
-              <input type="text" name='first_name' required autocomplete="off" />
-            </div>
-        
-            <div class="field-wrap">
-              <label>
-                Last Name<span class="req">*</span>
-              </label>
-              <input type="text" name='last_name'required autocomplete="off"/>
-            </div>
-          </div>
-
-          <div class="field-wrap">
-            <label>
-              Email Address<span class="req">*</span>
-            </label>
-            <input type="email" name='email' required autocomplete="off"/>
-          </div>
-          
-          <div class="field-wrap">
-            <label>
-              Set A Password<span class="req">*</span>
-            </label>
-            <input type="password" name='password' required autocomplete="off"/>
-          </div>
-          
-          <button type="submit" class="button button-block"/>Get Started</button>
-          
-          </form>
 
         </div>
         

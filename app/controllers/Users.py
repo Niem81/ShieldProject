@@ -31,6 +31,7 @@ class Users(Controller):
             'password' : request.form['password2']
         }
         login_status = self.models['User'].login_user(user_info)
+        print "got login_status"
         if login_status['status'] == True:
             session['user_id'] = login_status['user']['id']
             session['first_name'] = login_status['user']['first_name']
