@@ -1,24 +1,5 @@
-* {
-  font-family: monaco;
-}
 
-body {
-	background: url(http://i.istockimg.com/file_thumbview_approve/52313702/6/stock-illustration-52313702-seamless-pattern-of-electronic-devices-and-home-appliances-icons-set-.jpg) ;
-}
-
-/*../img/shield_back.png*/
-
-.first {
-    height: 100px;
-    background-color: #ddd;
-}
-.first a {
-	position: absolute;
-	margin: 0 10px;
-	text-decoration: none;
-}
-.ontop {
-    height: auto;
-    background-color: #d00;
-    top: 100px;
+.centralize {
+	vertical-align: middle;
+	margin: auto 0;
 }

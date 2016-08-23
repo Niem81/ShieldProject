@@ -1,0 +1,23 @@
+<div id="createModal"
+     class="modal"
+     role="dialog" >
+	<div class="modal-dialog" >
+		<div class="modal-content" >
+			<div class="modal-header" >
+				<button type="button"
+				        class="close"
+				        ng-click="createModal.hide()" >&times;</button >
+				<h3>Sign Up for Free</h3>
+				<h4 class="modal-title" >Register User</h4 >
+			</div >
+			<div class="modal-body" >
+				<form ng-submit="registerUser()"
+				      class="form-horizontal"
+				      novalidate >
+					<ng-include src="'partials/form.html'" ></ng-include >
+				</form >
+			</div >
+		</div >
+
+	</div >
+</div >
