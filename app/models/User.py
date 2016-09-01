@@ -20,8 +20,10 @@ class User(Model):
 		if errors:
 			return {'status': False, 'errors': errors}
 		else:
-			query = 'INSERT INTO users (first_name, last_name, admin, email, password, created_at, updated_at) VALUES (%s, %s, %s, %s, %s, NOW(), NOW())'
-			data = [users['first_name'], users['last_name'], users['admin'], users['email'], hashed_pw ]
+			query = 'INSERT INTO users (first_name, last_name, admin, email, password, created_at, updated_at) \
+			 VALUES (:first_name, :last_name, :admin, :email, :password, NOW(), NOW())'
+			data = {'first_name':users['first_name'],'last_name': users['last_name'] \
+			,'admin': users['admin'],'email': users['email'],'password': hashed_pw }
 			users = self.db.query_db(query, data)
 			get_user = 'SELECT * FROM users order by id DESC LIMIT 1'
 			get_user_query = self.db.query_db(get_user)

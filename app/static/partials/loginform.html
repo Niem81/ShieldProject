@@ -4,7 +4,7 @@
     <input type="email"
         class="form-control"
         name="email"
-        ng-model=""
+        ng-model="user.selectedUser.email"
         required/>
   </div>
 </div>
@@ -14,7 +14,13 @@
     <input type="password"
         class="form-control"
         name="password"
-        ng-model=""
+        ng-model="user.selectedUser.password"
         required/>
   </div>
 </div>
+<div class="buttons" >
+  <button class="btn btn-success btn-block"
+          ladda="user.isSaving"
+          type="submit" ><span class="glyphicon-user"></span>Log In
+  </button >
+</div >
